@@ -17,7 +17,7 @@ def filter_berita(media):
         element = "h3"
         medianya = "list-content__title"
     elif media == "tribun":
-        element = "div"
+        element = "h3"
         medianya = "hltitle"
     
     return [element, medianya]
@@ -38,7 +38,7 @@ def ambil_data(media, url):
         return "data tidak ditemukan"
 
 
-app = Flask(__name__, template_folder="web")
+app = Flask(__name__, template_folder=".")
 
 @app.route("/")
 
