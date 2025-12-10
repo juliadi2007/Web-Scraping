@@ -16,6 +16,9 @@ def filter_berita(media):
     elif media == "detik":
         element = "h3"
         medianya = "list-content__title"
+    elif media == "tribun":
+        element = "div"
+        medianya = "hltitle"
     
     return [element, medianya]
 
@@ -43,7 +46,8 @@ def home():
     # hasil = tambah(20,10)
     kompas = ambil_data("kompas", "https://www.kompas.com/")
     detik = ambil_data("detik", "https://www.detik.com/")
-    return render_template("index.html", kompas=kompas, detik=detik)
+    tribun = ambil_data("tribun", "https://www.tribunnews.com/")
+    return render_template("index.html", kompas=kompas, detik=detik, tribun=tribun)
 
 if __name__ == "__main__":
     app.run(debug=True)
